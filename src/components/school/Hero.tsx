@@ -82,7 +82,7 @@ const Hero = () => {
               <p className="text-xs text-muted-foreground mb-1">Established</p>
               <p className="text-xl font-display font-bold text-primary">Since 2013</p>
             </div>
-            <div className="mt-4 text-center text-sm text-muted-foreground">
+            <div className="mt-4 text-center text-lg font-bold text-primary">
               Our Classes of 2024 with Ahmed, Principal of Boys Senior School
             </div>
           </div>
