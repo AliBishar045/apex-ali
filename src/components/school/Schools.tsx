@@ -17,7 +17,7 @@ const Schools = () => {
     },
     {
       name: "Apex Girls High School",
-      type: "Day & Boarding",
+      type: "Senior & Secondary school",
       location: "South C, Nairobi",
       image: girlsImage,
       description:
@@ -27,7 +27,7 @@ const Schools = () => {
     {
       name: "Apex Junior School",
       type: "Primary School",
-      location: "South C Mougoya",
+      location: "South C Mugoya",
       image: primaryImage,
       description:
         "Building strong foundations for young learners through engaging CBC curriculum with emphasis on creativity, critical thinking, and values.",
