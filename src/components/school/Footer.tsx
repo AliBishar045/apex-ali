@@ -14,9 +14,9 @@ const Footer = () => {
   ];
 
   const schools = [
-    "Apex Boys High School - Gataka",
-    "Apex Girls High School - South C",
-    "Apex Junior School - South C Mougoya",
+    "Apex Boys High School - Gataka Road,Rongai , Kajiado county",
+    "Apex Girls High School - Next To Knec, South C, Nairobi ",
+    "Apex Junior School - Mugoya Estate, South C,Nairobi ",
   ];
 
   return (
