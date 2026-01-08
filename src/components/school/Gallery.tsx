@@ -11,7 +11,7 @@ import studentsGroup2 from "@/assets/students-group2.jpeg";
 import primaryKids from "@/assets/primary-kids.jpg";
 import sportsImg from "@/assets/sports.jpg";
 import teachersImg from "@/assets/teachers.jpg";
-import instagramReel from "@/assets/instagram-reel.mp4";
+import instagramReel from "@/assets/video-main.mp4";
 
 const Gallery = () => {
   const images = [
@@ -55,9 +55,10 @@ const Gallery = () => {
               loop
               muted
               playsInline
+              preload="auto"
               controls
               poster="/placeholder.svg"
-              className="w-full h-[600px] object-cover object-top"
+              className="w-full h-[600px] object-contain bg-black"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none" />
           </div>

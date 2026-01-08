@@ -17,7 +17,7 @@ import studentsGroup1 from "@/assets/students-group1.jpeg";
 import teachers from "@/assets/teachers.jpg";
 import boysTrophy from "@/assets/boys-trophy.jpeg";
 
-import instagramReel from "@/assets/instagram-reel.mp4";
+import instagramReel from "@/assets/video-main.mp4";
 
 // Mock data for Instagram Feed with real imported images
 const instagramPosts = [
@@ -98,14 +98,15 @@ const SocialMediaFeeds = () => {
             <Card className="border-none shadow-lg overflow-hidden h-[500px] bg-card flex flex-col">
               <CardContent className="p-0 h-full bg-black flex items-center justify-center">
                  <video 
-                   src={instagramReel}
-                   className="w-full h-full object-contain" 
-                   autoPlay
-                   loop
-                   muted
-                   playsInline
-                   controls
-                 />
+                  src={instagramReel}
+                  className="w-full h-full object-contain bg-black" 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  controls
+                />
                </CardContent>
             </Card>
             <Button className="w-full gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none" asChild>
