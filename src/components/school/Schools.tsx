@@ -1,4 +1,5 @@
-import { MapPin, Users, GraduationCap } from "lucide-react";
+import { Link } from "react-router-dom";
+import { MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import boysImage from "@/assets/boys-formal.jpeg";
 import girlsImage from "@/assets/girls-admin.jpeg";
@@ -11,6 +12,7 @@ const Schools = () => {
       type: "Senior School (Boarding)",
       location: "Gataka",
       image: boysImage,
+      link: "/school/boys",
       description:
         "A premier boarding school for boys offering CBC and 8-4-4 curriculum with excellent facilities and a focus on academic excellence and character development.",
       features: ["Full Boarding", "Science Labs", "Sports Facilities", "Library"],
@@ -20,6 +22,7 @@ const Schools = () => {
       type: "Senior & Secondary school",
       location: "South C, Nairobi",
       image: girlsImage,
+      link: "/school/girls",
       description:
         "Empowering young women through quality education in a safe and nurturing environment. Focus on academics, Islamic values, and personal development.",
       features: ["Day School", "Modern Classrooms", "Computer Lab", "Safe Environment"],
@@ -29,6 +32,7 @@ const Schools = () => {
       type: "Primary School",
       location: "South C Mugoya",
       image: primaryImage,
+      link: "/school/junior",
       description:
         "Building strong foundations for young learners through engaging CBC curriculum with emphasis on creativity, critical thinking, and values.",
       features: ["CBC Curriculum", "Play Areas", "Feeding Program", "Transport Available"],
@@ -64,10 +68,10 @@ const Schools = () => {
                   ? "school-girls"
                   : "school-junior"
               }
-              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-card transition-all duration-500 hover:-translate-y-2"
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-card transition-all duration-500 hover:-translate-y-2 flex flex-col"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <Link to={school.link} className="block relative h-56 overflow-hidden cursor-pointer">
                 <img
                   src={school.image}
                   alt={school.name}
@@ -79,13 +83,15 @@ const Schools = () => {
                     {school.type}
                   </span>
                 </div>
-              </div>
+              </Link>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-display font-bold text-foreground mb-2">
-                  {school.name}
-                </h3>
+              <div className="p-6 flex flex-col flex-grow">
+                <Link to={school.link} className="block">
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {school.name}
+                  </h3>
+                </Link>
                 <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
                   <MapPin className="w-4 h-4 text-primary" />
                   {school.location}
@@ -95,7 +101,7 @@ const Schools = () => {
                 </p>
 
                 {/* Features */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {school.features.map((feature, idx) => (
                     <span
                       key={idx}
@@ -106,9 +112,17 @@ const Schools = () => {
                   ))}
                 </div>
 
-                <Button variant="outline" className="w-full" asChild>
-                  <a href="#contact">Enquire Now</a>
-                </Button>
+                <div className="mt-auto space-y-3">
+                  <Button className="w-full gap-2" asChild>
+                    <Link to={school.link}>
+                      View School Profile
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="#contact">Enquire Now</a>
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

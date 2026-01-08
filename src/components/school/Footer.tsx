@@ -1,5 +1,6 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import logo from "@/assets/apex-logo.jpg";
+import { trackSocialClick } from "@/lib/analytics";
 
 const Footer = () => {
   const quickLinks = [
@@ -19,6 +20,10 @@ const Footer = () => {
     "Apex Junior School - Mugoya Estate, South C,Nairobi ",
   ];
 
+  const handleSocialClick = (platform: string) => {
+    trackSocialClick(platform, "Footer");
+  };
+
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="h-1 bg-primary-gradient" />
@@ -32,10 +37,43 @@ const Footer = () => {
                 <p className="font-display font-bold text-lg text-gradient-accent">APEX SCHOOLS</p>
               </div>
             </div>
-            <p className="text-background/70 text-sm leading-relaxed">
+            <p className="text-background/70 text-sm leading-relaxed mb-6">
               Excellence in education. Nurturing tomorrow's leaders through 
               quality education and strong values.
             </p>
+            {/* Social Icons */}
+            <div className="flex gap-4">
+              <a 
+                href="https://www.facebook.com/p/Apex-Group-Of-Schools-KE-100079193852877/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-background/10 hover:bg-blue-600 p-2 rounded-full transition-colors text-white"
+                aria-label="Facebook"
+                onClick={() => handleSocialClick("Facebook")}
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/apexschool_ke/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-background/10 hover:bg-pink-600 p-2 rounded-full transition-colors text-white"
+                aria-label="Instagram"
+                onClick={() => handleSocialClick("Instagram")}
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-background/10 hover:bg-red-600 p-2 rounded-full transition-colors text-white"
+                aria-label="YouTube"
+                onClick={() => handleSocialClick("YouTube")}
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}

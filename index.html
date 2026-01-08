@@ -3,42 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APEX GROUP OF SCHOOLS</title>
+    <title>APEX GROUP OF SCHOOLS | Excellence in Education</title>
     <link rel="icon" type="image/svg+xml" href="/apex-favicon.svg" />
-    <link rel="canonical" href="https://apexschools.example/" />
-    <meta name="description" content="APEX GROUP OF SCHOOLS — Excellence in Education" />
-    <meta name="author" content="ALI BISHAR" />
-    <meta name="keywords" content="EDUCATION IS KEY TO success" />
+    <link rel="canonical" href="https://apexschools.co.ke/" />
+    <meta name="description" content="APEX GROUP OF SCHOOLS — Leading educational institution in Nairobi offering CBC & 8-4-4 curriculums with a focus on holistic development and Islamic values." />
+    <meta name="author" content="APEX GROUP OF SCHOOLS" />
+    <meta name="keywords" content="Apex Schools, Nairobi Schools, CBC, 8-4-4, Islamic School, Best Schools in Kenya, Boys High School, Girls High School, Junior School" />
 
-    <meta property="og:title" content="Apex Group of Schools" />
-    <meta property="og:description" content="Empowering young minds through quality education, Islamic values, and holistic development." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Apex Group of Schools | Nurturing Future Leaders" />
+    <meta property="og:description" content="Join Apex Group of Schools for world-class education. We offer Boys High, Girls High, and Junior School programs centered on academic excellence and character building." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/apex-logo.jpg" />
+    <meta property="og:url" content="https://apexschools.co.ke/" />
+    <meta property="og:image" content="https://apexschools.co.ke/assets/og-image.jpg" />
+    <meta property="og:site_name" content="Apex Group of Schools" />
+    <meta property="fb:app_id" content="YOUR_FB_APP_ID" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@apexschools" />
+    <meta name="twitter:title" content="Apex Group of Schools | Excellence in Education" />
+    <meta name="twitter:description" content="Empowering young minds through quality education, Islamic values, and holistic development." />
+    <meta name="twitter:image" content="https://apexschools.co.ke/assets/og-image.jpg" />
+
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "School",
+        "@type": "EducationalOrganization",
         "name": "Apex Group of Schools",
         "url": "https://apexschools.co.ke/",
-        "logo": "/apex-favicon.svg",
+        "logo": "https://apexschools.co.ke/apex-favicon.svg",
+        "sameAs": [
+          "https://www.facebook.com/apexgroupofschools",
+          "https://www.instagram.com/apexgroupofschools",
+          "https://www.youtube.com/@apexgroupofschools"
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Nairobi",
           "addressCountry": "KE"
         },
-        "sameAs": []
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+254-720-253-298",
+          "contactType": "admissions"
+        }
       }
     </script>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ApexSchools" />
-    <meta name="twitter:title" content="Apex Group of Schools" />
-    <meta name="twitter:description" content="Empowering young minds through quality education, Islamic values, and holistic development." />
-    <meta name="twitter:image" content="/apex-logo.jpg" />
+    <!-- Facebook Pixel Code (Placeholder) -->
+    <!-- 
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+    -->
+
+    <!-- Google Analytics (Placeholder) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YOUR_MEASUREMENT_ID');
+    </script>
+    -->
   </head>
 
   <body>
+    <div id="fb-root"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Facebook SDK for Page Plugin -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="YOUR_NONCE"></script>
   </body>
 </html>

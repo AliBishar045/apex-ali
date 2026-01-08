@@ -5,6 +5,7 @@ import Schools from "@/components/school/Schools";
 import Programs from "@/components/school/Programs";
 import StatsCounter from "@/components/school/StatsCounter";
 import NewsEvents from "@/components/school/NewsEvents";
+import SocialMediaFeeds from "@/components/social/SocialMediaFeeds";
 import Testimonials from "@/components/school/Testimonials";
 import Gallery from "@/components/school/Gallery";
 import Contact from "@/components/school/Contact";
@@ -23,6 +24,7 @@ const Index = () => {
       <StatsCounter />
       <Programs />
       <NewsEvents />
+      <SocialMediaFeeds />
       <Testimonials />
       <Gallery />
       <Contact />

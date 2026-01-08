@@ -11,6 +11,7 @@ import studentsGroup2 from "@/assets/students-group2.jpeg";
 import primaryKids from "@/assets/primary-kids.jpg";
 import sportsImg from "@/assets/sports.jpg";
 import teachersImg from "@/assets/teachers.jpg";
+import instagramReel from "@/assets/instagram-reel.mp4";
 
 const Gallery = () => {
   const images = [
@@ -49,16 +50,16 @@ const Gallery = () => {
         <div className="mb-12">
           <div className="relative rounded-3xl overflow-hidden shadow-card border border-border">
             <video
-              src={import.meta.env.VITE_GALLERY_VIDEO_URL || "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"}
+              src={instagramReel}
               autoPlay
               loop
               muted
               playsInline
-              controls={false}
+              controls
               poster="/placeholder.svg"
-              className="w-full h-[380px] object-cover"
+              className="w-full h-[600px] object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
 
