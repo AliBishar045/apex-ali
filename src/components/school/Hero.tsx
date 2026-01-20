@@ -10,23 +10,13 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 import apexHero from "@/assets/apex-hero.png";
-import primaryKids from "@/assets/primary-kids.jpg";
-import boysGroup from "@/assets/boys-group.jpeg";
-import studentsGroup1 from "@/assets/students-group1.jpeg";
-import studentsGroup2 from "@/assets/students-group2.jpeg";
-import girlsClassroom from "@/assets/girls-classroom.jpeg";
-import boysStudying from "@/assets/boys-studying.jpeg";
+import apexHero2 from "@/assets/apex-hero-2.png";
 
 const Hero = () => {
   // Carousel configuration for Hero section
   const images = [
     { src: apexHero, alt: "Apex Group of Schools" },
-    { src: boysGroup, alt: "Apex Students Group" },
-    { src: studentsGroup1, alt: "Apex Students Learning" },
-    { src: studentsGroup2, alt: "Apex Senior Students" },
-    { src: girlsClassroom, alt: "Girls Classroom Session" },
-    { src: primaryKids, alt: "Apex Primary School" },
-    { src: boysStudying, alt: "Students Studying" },
+    { src: apexHero2, alt: "Apex Students" },
   ];
 
   return (
@@ -65,17 +55,17 @@ const Hero = () => {
         </div>
       </Carousel>
 
-      {/* Centered Content Overlay (Merishaw Style) */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
-        <div className="max-w-4xl animate-fade-in-up">
-          <h2 className="text-lg md:text-xl font-medium text-white/90 mb-4 tracking-[0.2em] uppercase text-shadow-sm">
+      {/* Bottom Content Overlay */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center text-center z-20 pb-16 md:pb-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+        <div className="max-w-4xl animate-fade-in-up px-4">
+          <h2 className="text-lg md:text-xl font-medium text-white/90 mb-3 tracking-[0.2em] uppercase text-shadow-sm">
             Welcome To
           </h2>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6 text-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-4 text-shadow-lg">
             Apex Group <br />
             <span className="text-primary-foreground">Of Schools</span>
           </h1>
-          <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed text-shadow-sm font-light">
+          <p className="text-white/90 text-lg md:text-xl mb-6 max-w-2xl mx-auto leading-relaxed text-shadow-sm font-light">
             Where excellence meets purpose. Nurturing the next generation of leaders.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
