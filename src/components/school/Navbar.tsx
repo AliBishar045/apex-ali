@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone, GraduationCap, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/apex-logo.jpg";
+import logo from "@/assets/logo-new.jpg";
 import {
   NavigationMenu,
   NavigationMenuContent,

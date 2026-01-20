@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
-import logo from "@/assets/apex-logo.jpg";
+import logo from "@/assets/logo-new.jpg";
 import { trackSocialClick } from "@/lib/analytics";
 
 const Footer = () => {
