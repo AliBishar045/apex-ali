@@ -9,18 +9,18 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-import apexHero from "@/assets/apex-hero.png";
-import apexHero2 from "@/assets/apex-hero-2.png";
+import apexHero1 from "@/assets/2.png";
+import apexHero2 from "@/assets/1.png";
 
 const Hero = () => {
-  // Carousel configuration for Hero section
+  // Updated Hero configuration with user-specified images and text position
   const images = [
-    { src: apexHero, alt: "Apex Group of Schools" },
+    { src: apexHero1, alt: "Apex Group of Schools" },
     { src: apexHero2, alt: "Apex Students" },
   ];
 
   return (
-    <section id="home" className="relative w-full h-[95vh] mt-[80px] overflow-hidden">
+    <section id="home" className="relative w-full h-screen mt-[80px] overflow-hidden bg-black">
       <Carousel
         opts={{
           loop: true,
@@ -35,13 +35,13 @@ const Hero = () => {
       >
         <CarouselContent className="-ml-0 h-full">
           {images.map((image, index) => (
-            <CarouselItem key={index} className="pl-0 h-full basis-full">
-              <div className="relative w-full h-full">
+            <CarouselItem key={index} className="pl-0 h-full basis-full bg-black">
+              <div className="relative w-full h-full flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/20 z-10" /> {/* Subtle overlay for text readability */}
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full !object-contain object-center"
                 />
               </div>
             </CarouselItem>
@@ -56,7 +56,7 @@ const Hero = () => {
       </Carousel>
 
       {/* Bottom Content Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center text-center z-20 pb-16 md:pb-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+      <div className="absolute inset-0 flex flex-col justify-end items-center text-center z-20 pb-16 md:pb-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
         <div className="max-w-4xl animate-fade-in-up px-4">
           <h2 className="text-lg md:text-xl font-medium text-white/90 mb-3 tracking-[0.2em] uppercase text-shadow-sm">
             Welcome To

@@ -16,6 +16,7 @@ import SocialCTA from "@/components/social/SocialCTA";
 import { SchoolStaff, SchoolFacility } from "@/types/school";
 import boysImage from "@/assets/boys.jpeg";
 import dosImage from "@/assets/dos-boys.jpeg";
+import deputyImage from "@/assets/depa.JPG";
 import mathsTeacherImage from "@/assets/maths-teacher.jpeg";
 import physicsTeacherImage from "@/assets/physics-teacher-boys.jpeg";
 
@@ -82,7 +83,7 @@ const BoysHigh = () => {
       name: "Mr. Benedict",
       role: "deputy",
       title: "Deputy Principal",
-      image_url: null,
+      image_url: deputyImage,
       is_leadership: true,
     },
     {
