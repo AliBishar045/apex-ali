@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone, GraduationCap, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo-new.jpg";
+import logo from "@/assets/logo-updated.jpg";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -120,7 +120,7 @@ const Navbar = () => {
             <a href={isHome ? "#home" : "/"} className="flex items-center gap-3 sm:gap-4 min-w-fit">
               <img src={logo} alt="Apex School Logo" className="h-12 sm:h-16 w-auto" />
               <div className="flex flex-col justify-center">
-                <p className="font-display font-extrabold text-primary text-lg sm:text-2xl xl:text-3xl leading-none tracking-tight">
+                <p className="font-display font-extrabold text-primary text-lg sm:text-2xl xl:text-2xl 2xl:text-3xl leading-none tracking-tight">
                   APEX GROUP
                 </p>
                 <p className="text-xs sm:text-sm xl:text-base text-primary/80 font-bold tracking-wide">
@@ -130,15 +130,15 @@ const Navbar = () => {
             </a>
 
             {/* Desktop Navigation - Hidden on lg (tablet/small laptop), visible on xl */}
-            <div className="hidden xl:flex items-center justify-center flex-1 px-8">
+            <div className="hidden xl:flex items-center justify-center flex-1 px-2 2xl:px-8">
               <NavigationMenu>
-                <NavigationMenuList className="gap-2 2xl:gap-6">
+                <NavigationMenuList className="gap-1 2xl:gap-6">
                   {navLinks.map((link) => (
                     <NavigationMenuItem key={link.label}>
                       {link.children ? (
                         <>
                           <NavigationMenuTrigger 
-                            className="bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent text-foreground hover:text-primary font-bold text-base 2xl:text-lg h-auto p-2"
+                            className="bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent text-foreground hover:text-primary font-bold text-sm 2xl:text-lg h-auto p-2"
                           >
                             {link.label}
                           </NavigationMenuTrigger>
@@ -161,7 +161,7 @@ const Navbar = () => {
                           <a
                             href={isHome ? link.href : `/${link.href}`}
                             className={cn(
-                              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2 py-2 text-base 2xl:text-lg font-bold transition-colors hover:text-primary text-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2 py-2 text-sm 2xl:text-lg font-bold transition-colors hover:text-primary text-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                             )}
                           >
                             {link.label}
@@ -176,7 +176,7 @@ const Navbar = () => {
 
             {/* Desktop CTA - Only Apply Now button to save space */}
             <div className="hidden xl:flex items-center gap-4 min-w-fit">
-              <Button size="lg" className="font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transition-all" asChild>
+              <Button size="default" className="font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transition-all 2xl:h-11 2xl:px-8" asChild>
                 <Link to="/admissions">
                   <GraduationCap className="w-5 h-5 mr-2" />
                   Apply Now
