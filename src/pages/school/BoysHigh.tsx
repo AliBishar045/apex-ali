@@ -14,7 +14,7 @@ import SchoolNews from "@/components/school/profile/SchoolNews";
 import SchoolTestimonials from "@/components/school/profile/SchoolTestimonials";
 import SocialCTA from "@/components/social/SocialCTA";
 import { SchoolStaff, SchoolFacility } from "@/types/school";
-import boysImage from "@/assets/boys-formal.jpeg";
+import boysImage from "@/assets/boys.jpeg";
 import dosImage from "@/assets/dos-boys.jpeg";
 import mathsTeacherImage from "@/assets/maths-teacher.jpeg";
 import physicsTeacherImage from "@/assets/physics-teacher-boys.jpeg";
