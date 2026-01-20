@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Phone, MessageSquare, Download } from "lucide-react";
+import { Trophy, Star, Medal, BookOpen, Phone, MessageSquare, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/school/Navbar";
 import Footer from "@/components/school/Footer";
@@ -162,10 +162,10 @@ const GirlsHigh = () => {
   const newsItems = [
     {
       id: "1",
-      title: "Top Performance in KCSE",
+      title: "Outstanding Academic Results",
       date: "Mar 20, 2024",
       category: "Academics",
-      summary: "Celebrating our students who achieved outstanding results in this year's national examinations.",
+      summary: "Girls High School achieved a mean score of 9.89, with top students scoring straight As and the last student scoring a B-.",
     },
     {
       id: "2",
@@ -185,20 +185,20 @@ const GirlsHigh = () => {
 
   const testimonials = [
     {
-      name: "Fatima A.",
-      role: "Parent, Form 2 Student",
+      name: "Mrs. Zulekha",
+      role: "Parent of Amina (Form 2)",
       content: "I am impressed by the emphasis on moral values alongside academic excellence. My daughter is thriving.",
       rating: 5,
     },
     {
-      name: "Aisha M.",
+      name: "Dr. Fatuma Ali",
       role: "Alumni, Class of 2020",
       content: "The mentorship program at Apex Girls helped me choose my career path. Forever grateful.",
       rating: 5,
     },
     {
-      name: "Mrs. Hassan",
-      role: "Parent, Form 4 Student",
+      name: "Mr. Rashid",
+      role: "Parent of Mariam (Form 4)",
       content: "The teachers are very approachable and dedicated to seeing every girl succeed.",
       rating: 4,
     },
@@ -236,7 +236,32 @@ const GirlsHigh = () => {
 
         {/* Academic Achievements */}
         <section id="academics" className="scroll-mt-32 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-          <AcademicAchievements />
+          <AcademicAchievements items={[
+            {
+              title: "KCSE 2025 Mean Score",
+              value: "9.89 B+",
+              description: "Consistent academic excellence in national exams",
+              icon: Trophy,
+            },
+            {
+              title: "University Entry",
+              value: "100%",
+              description: "Of our students qualify for direct university entry",
+              icon: BookOpen,
+            },
+            {
+              title: "National Awards",
+              value: "15+",
+              description: "Trophies in Science Congress & Drama Festivals",
+              icon: Medal,
+            },
+            {
+              title: "Student Satisfaction",
+              value: "4.8/5",
+              description: "Rated by parents and alumni for holistic growth",
+              icon: Star,
+            },
+          ]} />
         </section>
 
         {/* Unified Staff Section */}

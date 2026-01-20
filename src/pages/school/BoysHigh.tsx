@@ -15,6 +15,9 @@ import SchoolTestimonials from "@/components/school/profile/SchoolTestimonials";
 import SocialCTA from "@/components/social/SocialCTA";
 import { SchoolStaff, SchoolFacility } from "@/types/school";
 import boysImage from "@/assets/boys-formal.jpeg";
+import dosImage from "@/assets/dos-boys.jpeg";
+import mathsTeacherImage from "@/assets/maths-teacher.jpeg";
+import physicsTeacherImage from "@/assets/physics-teacher-boys.jpeg";
 
 const BoysHigh = () => {
   useEffect(() => {
@@ -67,7 +70,7 @@ const BoysHigh = () => {
     {
       id: "1",
       school_type: "boys",
-      name: "Mr. Kamau",
+      name: "Mr. Ahmed",
       role: "principal",
       title: "Principal",
       image_url: null,
@@ -76,7 +79,7 @@ const BoysHigh = () => {
     {
       id: "2",
       school_type: "boys",
-      name: "Mr. Omondi",
+      name: "Mr. Benedict",
       role: "deputy",
       title: "Deputy Principal",
       image_url: null,
@@ -85,20 +88,20 @@ const BoysHigh = () => {
     {
       id: "3",
       school_type: "boys",
-      name: "Mr. Kimani",
+      name: "Mr. Macharia",
       role: "dos",
       title: "Director of Studies",
-      image_url: null,
+      image_url: dosImage,
       is_leadership: true,
     },
     {
       id: "4",
       school_type: "boys",
-      name: "Mr. Juma",
+      name: "Mr. Albert",
       role: "hod",
       title: "Head of Mathematics",
       department: "Mathematics",
-      image_url: null,
+      image_url: mathsTeacherImage,
       is_leadership: false,
     },
     {
@@ -118,16 +121,16 @@ const BoysHigh = () => {
       role: "teacher",
       title: "Teacher",
       subject: "Physics/Maths",
-      image_url: null,
+      image_url: physicsTeacherImage,
       is_leadership: false,
     },
     {
       id: "7",
       school_type: "boys",
-      name: "Mr. Otieno",
+      name: "Mr. Nassir",
       role: "teacher",
       title: "Teacher",
-      subject: "History/CRE",
+      subject: "History/IRE",
       image_url: null,
       is_leadership: false,
     },
@@ -194,21 +197,21 @@ const BoysHigh = () => {
 
   const testimonials = [
     {
-      name: "John K.",
-      role: "Parent, Form 3 Student",
+      name: "Ali Dakane",
+      role: "Parent of Bukhari",
       content: "The transformation I've seen in my son is remarkable. His discipline and academic focus have improved tremendously.",
       rating: 5,
     },
     {
-      name: "Dr. A. Mwangi",
-      role: "Alumni, Class of 2018",
-      content: "Apex Boys gave me the foundation I needed for my medical career. The teachers went above and beyond.",
+      name: "Sheikh Hassan",
+      role: "Parent of Abdimhemin",
+      content: "Apex Boys gave my son the foundation he needed. The teachers went above and beyond to ensure success.",
       rating: 5,
     },
     {
-      name: "Sarah O.",
-      role: "Parent, Form 1 Student",
-      content: "The boarding facilities are excellent and the pastoral care puts my mind at ease.",
+      name: "ABDIRIZAK",
+      role: "Parent of Khalil",
+      content: "The boarding facilities are excellent and the pastoral care puts my mind at ease. Highly recommended.",
       rating: 4,
     },
   ];
@@ -233,7 +236,7 @@ const BoysHigh = () => {
         {/* Principal Message */}
         <section className="animate-in fade-in slide-in-from-bottom-8 duration-700">
           <PrincipalMessage 
-            name="Mr. Kamau" 
+            name="Mr. Ahmed" 
             title="Principal"
             message={[
               "Welcome to Apex Boys High School, a center of excellence where we nurture young men to become responsible leaders of tomorrow. Our holistic approach to education ensures that every student achieves their full potential.",

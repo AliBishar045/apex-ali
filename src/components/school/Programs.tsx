@@ -83,7 +83,7 @@ const Programs = () => {
               {/* Images */}
               <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 {program.images.length === 2 ? (
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {program.images.map((img, idx) => (
                       <div
                         key={idx}
@@ -92,7 +92,7 @@ const Programs = () => {
                         <img
                           src={img}
                           alt={`${program.title} ${idx + 1}`}
-                          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
                       </div>
@@ -103,7 +103,7 @@ const Programs = () => {
                     <img
                       src={program.images[0]}
                       alt={program.title}
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
                   </div>

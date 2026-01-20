@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { Quote, Star, GraduationCap } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 interface Testimonial {
   id: string;
@@ -13,44 +11,36 @@ interface Testimonial {
 }
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("testimonials")
-          .select("*")
-          .order("is_featured", { ascending: false })
-          .limit(6);
-
-        if (error) throw error;
-        setTestimonials(data || []);
-      } catch (error) {
-        console.error("Error fetching testimonials:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTestimonials();
-  }, []);
-
-  if (loading) {
-    return (
-      <section className="py-24 bg-surface">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="animate-pulse">
-              <div className="h-8 bg-muted rounded w-48 mx-auto mb-4" />
-              <div className="h-4 bg-muted rounded w-96 mx-auto" />
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // Static testimonials data replacing Supabase fetch
+  const testimonials: Testimonial[] = [
+    {
+      id: "1",
+      parent_name: "Ali Dakane",
+      child_name: "Bukhari",
+      school: "Boys High School",
+      content: "The transformation I've seen in my son is remarkable. His discipline and academic focus have improved tremendously. The school strikes a perfect balance between religion and modern education.",
+      rating: 5,
+      is_featured: true,
+    },
+    {
+      id: "2",
+      parent_name: "Mrs. Zulekha",
+      child_name: "Amina",
+      school: "Girls High School",
+      content: "I am impressed by the emphasis on moral values alongside academic excellence. My daughter is thriving both socially and academically in this safe environment.",
+      rating: 5,
+      is_featured: true,
+    },
+    {
+      id: "3",
+      parent_name: "Mama Zainab",
+      child_name: "Zainab",
+      school: "Junior School",
+      content: "My daughter loves going to school every day. The CBC curriculum is implemented so well, and the teachers are incredibly caring and patient with the little ones.",
+      rating: 5,
+      is_featured: false,
+    }
+  ];
 
   return (
     <section id="testimonials" className="py-24 bg-surface overflow-hidden">
@@ -121,10 +111,10 @@ const Testimonials = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.parent_name}</p>
-                  {testimonial.child_name && testimonial.school && (
+                  {testimonial.child_name && (
                     <div className="flex items-center gap-1 text-muted-foreground text-sm">
                       <GraduationCap className="w-3.5 h-3.5" />
-                      <span>Parent of {testimonial.child_name}</span>
+                      <span>{testimonial.child_name.includes("Alumni") ? "" : "Parent of "}{testimonial.child_name}</span>
                     </div>
                   )}
                   {testimonial.school && (
@@ -135,12 +125,6 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-
-        {testimonials.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">No testimonials available at the moment.</p>
-          </div>
-        )}
 
         {/* Call to Action */}
         <div className="mt-16 text-center">

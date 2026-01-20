@@ -11,7 +11,7 @@ import studentsGroup2 from "@/assets/students-group2.jpeg";
 import primaryKids from "@/assets/primary-kids.jpg";
 import sportsImg from "@/assets/sports.jpg";
 import teachersImg from "@/assets/teachers.jpg";
-import instagramReel from "@/assets/video-main.mp4";
+// import instagramReel from "@/assets/video-main.mp4";
 
 const Gallery = () => {
   const images = [
@@ -48,7 +48,7 @@ const Gallery = () => {
         </div>
 
         <div className="mb-12">
-          <div className="relative rounded-3xl overflow-hidden shadow-card border border-border">
+          {/* <div className="relative rounded-3xl overflow-hidden shadow-card border border-border">
             <video
               src={instagramReel}
               autoPlay
@@ -61,7 +61,7 @@ const Gallery = () => {
               className="w-full h-[600px] object-contain bg-black"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none" />
-          </div>
+          </div> */}
         </div>
 
         {/* Masonry-style Gallery */}

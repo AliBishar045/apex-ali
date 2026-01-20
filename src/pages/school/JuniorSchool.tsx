@@ -184,20 +184,20 @@ const JuniorSchool = () => {
 
   const testimonials = [
     {
-      name: "Mama Ryan",
-      role: "Parent, Grade 2",
-      content: "My son loves going to school every day. The teachers are so caring and patient.",
+      name: "Mama Zainab",
+      role: "Parent of Zainab (Grade 2)",
+      content: "My daughter loves going to school every day. The teachers are so caring and patient.",
       rating: 5,
     },
     {
-      name: "Mr. Otieno",
-      role: "Parent, Grade 5",
-      content: "The CBC implementation here is excellent. I can see my daughter developing real-life skills.",
+      name: "Mr. Juma",
+      role: "Parent of Ali (Grade 5)",
+      content: "The CBC implementation here is excellent. I can see my son developing real-life skills.",
       rating: 5,
     },
     {
-      name: "Mrs. Patel",
-      role: "Parent, PP2",
+      name: "Mrs. Farida",
+      role: "Parent of Yusuf (PP2)",
       content: "The multicultural environment is wonderful. My child is learning to respect and appreciate diversity.",
       rating: 5,
     },

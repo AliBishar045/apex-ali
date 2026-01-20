@@ -1,90 +1,91 @@
-import { ArrowRight, GraduationCap, BookOpen, Heart } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/boys-hero.jpeg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+import primaryKids from "@/assets/primary-kids.jpg";
+import boysGroup from "@/assets/boys-group.jpeg";
+import studentsGroup1 from "@/assets/students-group1.jpeg";
+import studentsGroup2 from "@/assets/students-group2.jpeg";
+import girlsClassroom from "@/assets/girls-classroom.jpeg";
+import boysStudying from "@/assets/boys-studying.jpeg";
 
 const Hero = () => {
-  const initialHero = (import.meta.env.VITE_HERO_IMAGE_URL as string) || heroImage;
-  const [imgSrc, setImgSrc] = useState<string>(initialHero);
+  const images = [
+    { src: boysGroup, alt: "Apex Students Group" },
+    { src: studentsGroup1, alt: "Apex Students Learning" },
+    { src: studentsGroup2, alt: "Apex Senior Students" },
+    { src: girlsClassroom, alt: "Girls Classroom Session" },
+    { src: primaryKids, alt: "Apex Primary School" },
+    { src: boysStudying, alt: "Students Studying" },
+  ];
+
   return (
-    <section id="home" className="pt-24 md:pt-28 bg-hero-gradient min-h-screen flex items-center relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-40 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: "1.5s" }} />
-      
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text Content */}
-          <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <GraduationCap className="w-4 h-4" />
-              <span className="text-xl md:text-2xl font-semibold">Welcome to APEX GROUP OF SCHOOLS</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight mb-6">
-              Where Excellence{" "}
-              <span className="text-gradient">Meets Purpose</span>
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              We shape minds and nurture hearts. Every child is seen, heard, and 
-              inspired — learning not just from books, but through discovery, 
-              identity, and excellence.
-            </p>
+    <section id="home" className="relative w-full h-[95vh] mt-[80px] overflow-hidden">
+      <Carousel
+        opts={{
+          loop: true,
+          align: "start",
+        }}
+        plugins={[
+          Autoplay({
+            delay: 5000,
+          }),
+        ]}
+        className="w-full h-full"
+      >
+        <CarouselContent className="-ml-0 h-full">
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="pl-0 h-full basis-full">
+              <div className="relative w-full h-full">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover object-center"
+                />
+                {/* No overlay for clearer images */}
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        
+        {/* Navigation Arrows */}
+        <div className="hidden md:block">
+            <CarouselPrevious className="left-4 w-12 h-12 border-none bg-white/20 hover:bg-white/40 text-white" />
+            <CarouselNext className="right-4 w-12 h-12 border-none bg-white/20 hover:bg-white/40 text-white" />
+        </div>
+      </Carousel>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="group shadow-glow" asChild>
+      {/* Floating White Card Overlay */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-20 max-w-2xl w-[90%] md:w-auto z-20">
+        <div className="bg-white/95 backdrop-blur-sm p-8 md:p-14 rounded-sm shadow-2xl animate-fade-in border-l-4 border-primary">
+          <h2 className="text-xl font-medium text-primary mb-2 tracking-wide uppercase">
+            Welcome To
+          </h2>
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground leading-tight mb-6">
+            Apex Group <br />
+            <span className="text-primary">Of Schools</span>
+          </h1>
+          <p className="text-muted-foreground text-xl mb-8 leading-relaxed">
+            Where excellence meets purpose. Nurturing the next generation of leaders through holistic education, discipline, and character development.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+             <Button size="lg" className="font-bold text-base px-8 shadow-lg hover:translate-y-[-2px] transition-transform" asChild>
                 <a href="#contact">
-                  Enroll Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#schools">Explore Our Schools</a>
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { value: "3", label: "Campuses", icon: BookOpen },
-                { value: "500+", label: "Students", icon: GraduationCap },
-                { value: "50+", label: "Teachers", icon: Heart },
-              ].map((stat, index) => (
-                <div key={index} className="text-center sm:text-left group">
-                  <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-5 h-5 text-primary/60" />
-                    <p className="text-3xl font-display font-bold text-primary group-hover:scale-105 transition-transform">
-                      {stat.value}
-                    </p>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="relative rounded-3xl overflow-hidden shadow-card hover-lift">
-              <img
-                src={imgSrc}
-                alt="Apex Boys High School Students"
-                className="w-full h-auto object-cover"
-                onError={() => setImgSrc(heroImage)}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
-            </div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-secondary/20 rounded-3xl -z-10 animate-float" />
-            <div className="absolute -top-6 -right-6 w-36 h-36 bg-primary/10 rounded-3xl -z-10 animate-float" style={{ animationDelay: "1s" }} />
-            
-            {/* Floating badge */}
-            <div className="absolute bottom-6 left-6 bg-card/95 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-card border border-border">
-              <p className="text-xs text-muted-foreground mb-1">Established</p>
-              <p className="text-xl font-display font-bold text-primary">Since 2013</p>
-            </div>
-            <div className="mt-4 text-center text-lg font-bold text-primary">
-              Our Classes of 2025 with Ahmed, Principal of Boys Senior School
-            </div>
+             </Button>
+             <Button variant="outline" size="lg" className="font-bold text-base px-8 border-2 hover:bg-muted/50" asChild>
+                <a href="#schools">
+                  Our Schools
+                </a>
+             </Button>
           </div>
         </div>
       </div>

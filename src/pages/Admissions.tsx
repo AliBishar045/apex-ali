@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-import logo from "@/assets/apex-logo.jpg";
+import logo from "@/assets/logo-updated.jpg";
 import { z } from "zod";
 
 const admissionSchema = z.object({
