@@ -11,6 +11,7 @@ interface Testimonial {
 }
 
 const Testimonials = () => {
+  // Testimonials data updated with parent feedback
   // Static testimonials data replacing Supabase fetch
   const testimonials: Testimonial[] = [
     {
