@@ -20,7 +20,11 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative w-full h-screen mt-[80px] overflow-hidden bg-black">
+    <section 
+      id="home" 
+      className="relative w-full mt-[80px] overflow-hidden bg-black"
+      style={{ height: 'calc(100vh - 80px)' }}
+    >
       <Carousel
         opts={{
           loop: true,
@@ -31,18 +35,22 @@ const Hero = () => {
             delay: 5000,
           }),
         ]}
-        className="w-full h-full"
+        className="w-full h-full [&>div]:h-full"
       >
         <CarouselContent className="-ml-0 h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="pl-0 h-full basis-full bg-black">
-              <div className="relative w-full h-full flex items-center justify-center">
-                <div className="absolute inset-0 bg-black/20 z-10" /> {/* Subtle overlay for text readability */}
+              <div className="relative w-full h-full">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full !object-contain object-center"
-                />
+                  className="w-full h-full"
+          style={{ 
+            objectFit: "fill", 
+            width: "100%",
+            height: "100%" 
+          }}
+        />
               </div>
             </CarouselItem>
           ))}
@@ -55,26 +63,26 @@ const Hero = () => {
         </div>
       </Carousel>
 
-      {/* Bottom Content Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center text-center z-20 pb-16 md:pb-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-        <div className="max-w-4xl animate-fade-in-up px-4">
-          <h2 className="text-lg md:text-xl font-medium text-white/90 mb-3 tracking-[0.2em] uppercase text-shadow-sm">
+      {/* Centered Content Overlay */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4 bg-black/20">
+        <div className="max-w-5xl animate-fade-in-up">
+          <h2 className="text-lg md:text-xl font-medium text-white tracking-[0.2em] uppercase mb-4 text-shadow-sm">
             Welcome To
           </h2>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-4 text-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6 text-shadow-lg">
             Apex Group <br />
-            <span className="text-primary-foreground">Of Schools</span>
+            <span className="text-white">Of Schools</span>
           </h1>
-          <p className="text-white/90 text-lg md:text-xl mb-6 max-w-2xl mx-auto leading-relaxed text-shadow-sm font-light">
+          <p className="text-white text-lg md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-shadow-md font-light">
             Where excellence meets purpose. Nurturing the next generation of leaders.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button size="lg" className="font-bold text-base px-8 shadow-xl hover:scale-105 transition-transform bg-primary hover:bg-primary/90 text-white border-none" asChild>
+             <Button size="lg" className="font-bold text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-md border-none" asChild>
                 <a href="#contact">
                   Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
              </Button>
-             <Button variant="outline" size="lg" className="font-bold text-base px-8 border-2 border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm bg-white/10" asChild>
+             <Button variant="outline" size="lg" className="font-bold text-lg px-8 py-6 border-2 border-white text-white hover:bg-white hover:text-black bg-transparent rounded-md" asChild>
                 <a href="#schools">
                   Our Schools
                 </a>
