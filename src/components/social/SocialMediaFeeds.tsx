@@ -17,7 +17,7 @@ import studentsGroup1 from "@/assets/students-group1.jpeg";
 import teachers from "@/assets/teachers.jpg";
 import boysTrophy from "@/assets/boys-trophy.jpeg";
 
-// import instagramReel from "@/assets/video-main.mp4";
+import instagramReel from "@/assets/instagram-reel.mp4";
 
 // Mock data for Instagram Feed with real imported images
 const instagramPosts = [
@@ -53,13 +53,13 @@ const SocialMediaFeeds = () => {
           
           {/* Facebook Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="p-3 bg-blue-600 rounded-full text-white shadow-md">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-blue-600 rounded-full text-white shadow-md transform hover:scale-110 transition-transform duration-300">
                 <Facebook className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Facebook</h3>
+              <h3 className="text-2xl font-display font-bold text-foreground">Facebook</h3>
             </div>
-            <Card className="border-none shadow-lg overflow-hidden h-[500px] bg-card">
+            <Card className="border-none shadow-xl overflow-hidden h-[500px] bg-card hover:shadow-2xl transition-shadow duration-300 rounded-3xl">
               <CardContent className="p-0 h-full">
                 {/* Facebook Page Plugin Iframe */}
                 <iframe 
@@ -75,7 +75,7 @@ const SocialMediaFeeds = () => {
                 ></iframe>
               </CardContent>
             </Card>
-            <Button className="w-full gap-2 bg-blue-600 hover:bg-blue-700 text-white" asChild>
+            <Button className="w-full gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/25 transition-all duration-300 rounded-xl py-6" asChild>
               <a 
                 href="https://www.facebook.com/p/Apex-Group-Of-Schools-KE-100079193852877/" 
                 target="_blank" 
@@ -89,15 +89,15 @@ const SocialMediaFeeds = () => {
 
           {/* Instagram Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="p-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-full text-white shadow-md">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 rounded-full text-white shadow-md transform hover:scale-110 transition-transform duration-300">
                 <Instagram className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Instagram</h3>
+              <h3 className="text-2xl font-display font-bold text-foreground">Instagram</h3>
             </div>
-            <Card className="border-none shadow-lg overflow-hidden h-[500px] bg-card flex flex-col">
-              <CardContent className="p-0 h-full bg-black flex items-center justify-center">
-                 {/* <video 
+            <Card className="border-none shadow-xl overflow-hidden h-[500px] bg-card flex flex-col hover:shadow-2xl transition-shadow duration-300 rounded-3xl">
+              <CardContent className="p-0 h-full bg-black flex items-center justify-center relative group">
+                 <video 
                   src={instagramReel}
                   className="w-full h-full object-contain bg-black" 
                   autoPlay
@@ -106,15 +106,10 @@ const SocialMediaFeeds = () => {
                   playsInline
                   preload="auto"
                   controls
-                /> */}
-                <img 
-                  src={boysGroup}
-                  alt="Instagram Feed"
-                  className="w-full h-full object-cover"
                 />
                </CardContent>
             </Card>
-            <Button className="w-full gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none" asChild>
+            <Button className="w-full gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-none shadow-lg hover:shadow-pink-500/25 transition-all duration-300 rounded-xl py-6" asChild>
               <a 
                 href="https://www.instagram.com/apexschool_ke/" 
                 target="_blank" 
@@ -128,16 +123,16 @@ const SocialMediaFeeds = () => {
 
           {/* YouTube Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="p-3 bg-red-600 rounded-full text-white shadow-md">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-red-600 rounded-full text-white shadow-md transform hover:scale-110 transition-transform duration-300">
                 <Youtube className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">YouTube</h3>
+              <h3 className="text-2xl font-display font-bold text-foreground">YouTube</h3>
             </div>
-            <Card className="border-none shadow-lg overflow-hidden h-[500px] bg-black">
+            <Card className="border-none shadow-xl overflow-hidden h-[500px] bg-black hover:shadow-2xl transition-shadow duration-300 rounded-3xl">
               <CardContent className="p-0 h-full flex flex-col">
                 {/* Main Video */}
-                <div className="flex-1 relative bg-black">
+                <div className="flex-1 relative bg-black group">
                   <iframe 
                      className="absolute inset-0 w-full h-full"
                      src="https://www.youtube.com/embed/pMbQW_vDkLQ?autoplay=1&mute=1&rel=0" 
@@ -157,11 +152,11 @@ const SocialMediaFeeds = () => {
                         { id: "sE_y5c_jE4g", title: "Sports Day Highlights 2024", views: "856 views", time: "2 months ago" }
                       ].map((video) => (
                         <div key={video.id} className="flex gap-3 items-start group cursor-pointer hover:bg-muted/50 p-2 rounded-lg transition-colors">
-                           <div className="w-24 h-16 bg-muted rounded overflow-hidden flex-shrink-0 relative">
-                              <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt="Thumbnail" className="w-full h-full object-cover" />
+                           <div className="w-24 h-16 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative shadow-sm">
+                              <img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt="Thumbnail" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                            </div>
                            <div>
-                              <p className="text-sm font-semibold line-clamp-2 group-hover:text-red-600 transition-colors">{video.title}</p>
+                              <p className="text-sm font-semibold line-clamp-2 group-hover:text-red-600 transition-colors font-display">{video.title}</p>
                               <p className="text-xs text-muted-foreground mt-1">{video.views} • {video.time}</p>
                            </div>
                         </div>
@@ -170,7 +165,7 @@ const SocialMediaFeeds = () => {
                 </div>
               </CardContent>
             </Card>
-            <Button className="w-full gap-2 bg-red-600 hover:bg-red-700 text-white" asChild>
+            <Button className="w-full gap-2 bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-red-600/25 transition-all duration-300 rounded-xl py-6" asChild>
               <a 
                 href="https://www.youtube.com/@ApexSchools" 
                 target="_blank" 

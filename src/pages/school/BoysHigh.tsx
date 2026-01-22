@@ -14,7 +14,7 @@ import SchoolNews from "@/components/school/profile/SchoolNews";
 import SchoolTestimonials from "@/components/school/profile/SchoolTestimonials";
 import SocialCTA from "@/components/social/SocialCTA";
 import { SchoolStaff, SchoolFacility } from "@/types/school";
-import boysImage from "@/assets/boys.jpeg";
+import boysImage from "@/assets/apex-boys-senior-school.jpg";
 import dosImage from "@/assets/dos-boys.jpeg";
 import deputyImage from "@/assets/depa.JPG";
 import mathsTeacherImage from "@/assets/maths-teacher.jpeg";

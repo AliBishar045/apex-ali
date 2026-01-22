@@ -120,11 +120,8 @@ const Navbar = () => {
             <a href={isHome ? "#home" : "/"} className="flex items-center gap-3 sm:gap-4 min-w-fit">
               <img src={logo} alt="Apex School Logo" className="h-12 sm:h-16 w-auto" />
               <div className="flex flex-col justify-center">
-                <p className="font-display font-extrabold text-primary text-lg sm:text-2xl xl:text-2xl 2xl:text-3xl leading-none tracking-tight">
-                  APEX GROUP
-                </p>
-                <p className="text-xs sm:text-sm xl:text-base text-primary/80 font-bold tracking-wide">
-                  OF SCHOOLS
+                <p className="font-display font-extrabold text-primary text-lg sm:text-xl xl:text-2xl leading-none tracking-tight whitespace-nowrap">
+                  APEX GROUP OF SCHOOLS
                 </p>
               </div>
             </a>

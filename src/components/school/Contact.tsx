@@ -32,7 +32,7 @@ const Contact = () => {
     },
     {
       name: "Junior School",
-      address: "South C Mougoya, Nairobi",
+      address: "South C Mugoya, Nairobi",
       type: "Primary",
     },
   ];
@@ -73,32 +73,6 @@ const Contact = () => {
                 <Button variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">{info.action}</Button>
               </a>
             ))}
-          </div>
-
-          {/* Locations */}
-          <div className="bg-card border border-border rounded-2xl p-8">
-            <h3 className="text-xl font-display font-bold text-foreground mb-6 text-center">
-              Our Locations
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {locations.map((loc, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 p-4 bg-surface rounded-xl"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{loc.name}</p>
-                    <p className="text-sm text-muted-foreground">{loc.address}</p>
-                    <span className="inline-block mt-2 text-xs bg-secondary/10 text-secondary px-2 py-1 rounded">
-                      {loc.type}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Office Hours */}

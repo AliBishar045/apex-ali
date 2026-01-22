@@ -6,57 +6,59 @@
 
 @layer base {
   :root {
-    /* Premium Education Theme - Light Mode */
-    --background: 210 50% 98%;
-    --foreground: 215 30% 15%;
+    /* Premium Education Theme - Professional School Colors (From FX Trader Hub) */
+    --background: 210 40% 98%;
+    --foreground: 220 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 30% 15%;
+    --card-foreground: 220 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 30% 15%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 215 85% 45%;
+    /* Deep Maroon/Burgundy Primary - Professional School Color */
+    --primary: 348 70% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 152 70% 35%;
+    /* Forest Green Secondary - Classic Education Color */
+    --secondary: 152 60% 30%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 94%;
-    --muted-foreground: 215 15% 40%;
+    --muted: 210 25% 94%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 215 60% 94%;
-    --accent-foreground: 215 85% 35%;
+    --accent: 348 50% 95%;
+    --accent-foreground: 348 70% 30%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 25% 88%;
-    --input: 210 25% 88%;
-    --ring: 215 85% 45%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 348 70% 35%;
 
     --radius: 0.75rem;
 
-    --surface: 210 40% 97%;
+    --surface: 210 35% 97%;
 
     /* Premium gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(215, 85%, 45%) 0%, hsl(195, 80%, 50%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(152, 70%, 35%) 0%, hsl(165, 60%, 45%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(210, 50%, 98%) 0%, hsl(215, 55%, 96%) 50%, hsl(215, 45%, 94%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(35, 90%, 55%) 0%, hsl(25, 85%, 50%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(348, 70%, 35%) 0%, hsl(348, 65%, 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(152, 60%, 30%) 0%, hsl(165, 50%, 40%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210, 40%, 98%) 0%, hsl(210, 35%, 96%) 50%, hsl(210, 30%, 94%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35, 90%, 50%) 0%, hsl(25, 85%, 45%) 100%);
 
-    --shadow-soft: 0 4px 20px -4px hsl(215 40% 20% / 0.08);
-    --shadow-card: 0 10px 40px -10px hsl(215 40% 20% / 0.12);
-    --shadow-glow: 0 0 30px hsl(215 85% 45% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(220 30% 15% / 0.08);
+    --shadow-card: 0 10px 40px -10px hsl(220 30% 15% / 0.12);
+    --shadow-glow: 0 0 30px hsl(348 70% 35% / 0.15);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 215 30% 15%;
-    --sidebar-primary: 215 85% 45%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 348 70% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 60% 94%;
-    --sidebar-accent-foreground: 215 85% 35%;
-    --sidebar-border: 210 25% 88%;
-    --sidebar-ring: 215 85% 45%;
+    --sidebar-accent: 348 50% 95%;
+    --sidebar-accent-foreground: 348 70% 30%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 348 70% 35%;
   }
 
   .dark {
@@ -118,7 +120,6 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -197,7 +198,7 @@
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -206,14 +207,18 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideIn {
     from {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateX(-20px);
     }
     to {
       opacity: 1;
@@ -222,56 +227,20 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes pulseSoft {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
-
-  /* Professional Hover Effects */
-  .hover-lift {
-    @apply transition-all duration-300;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-card);
-  }
-
-  .hover-glow:hover {
-    box-shadow: var(--shadow-glow);
-  }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Premium scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-  border-radius: 5px;
-  border: 2px solid hsl(var(--background));
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
-}
-
-/* Selection styling */
-::selection {
-  background: hsl(var(--primary) / 0.2);
-  color: hsl(var(--foreground));
 }
